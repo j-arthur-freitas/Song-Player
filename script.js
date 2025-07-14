@@ -1,6 +1,6 @@
 const songName = document.getElementById("name__music");
 const bandName = document.getElementById("band__music");
-const song = document.getElementById("song");
+const song = document.getElementById("music");
 const cover = document.getElementById("cover");
 const play = document.getElementById("play");
 const next = document.getElementById("next");
@@ -77,10 +77,9 @@ function nextSong(){
     playMusic(); 
 }
 
-
 initializeSong();
 
 play.addEventListener("click", playPauseDecider);
 previous.addEventListener("click", previousSong);
 next.addEventListener("click", nextSong);
-song.addEventListener("timeupdate", updateprogressbar);
+
