@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player-Spotify</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h4 id="playlist__title">Playlist - International</h4>
+        <img id="cover" alt="Music cover">
+        <audio id="music" alt="Music Song"></audio>
+        <div id="bellow__cover">
+        <div id="info__music">
+            <div id="name__music"> Nome da Musica</div>
+            <div class="light__color" id="band__music"> Nome da banda</div>
+        </div> 
+        <button id="like__button" class="light__color"><i class="bi bi-heart"></i></button>
+        </div>
+        <div id="progress__bar">
+            <div id="current__progress"></div>
+        </div>
+        <div id="button__container">
+            <button id="shuffle" class="button"><i class="bi bi-shuffle"></i></button>
+            <button id="previous" class="button button__navigate"><i class="bi bi-skip-start-fill"></i></button>  
+            <button id="play" class="button button__biggest"><i class="bi bi-play-circle-fill"></i></button>
+            <button id="next" class="button button__navigate"><i class="bi bi-skip-end-fill"></i></button>
+            <button id="repeat" class="button"><i class="bi bi-repeat"></i></button>
+         </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
