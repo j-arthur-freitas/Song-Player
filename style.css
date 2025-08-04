@@ -160,7 +160,7 @@ img#cover {
     border-radius: 0; /* Sem borda arredondada em telas muito pequenas */
     padding: 1.5rem;
     max-width: 100%;
-    min-height: 100vh; /* Ocupa a altura total em mobile */
+    min-height: 100dvh; /* Ocupa a altura total em mobile */
     justify-content: space-around; /* Distribui o conteúdo verticalmente */
   }
 
