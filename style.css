@@ -1,80 +1,212 @@
-body{
-    background-image: 
-    linear-gradient(
-    rgb(59, 88, 93),       
-    rgb(29, 40, 42)
-    );
-    height: 100vh;
-    color: whitesmoke;
-    font-family:sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} 
-button{
-background-color: inherit;
-color: inherit;
-border:none;
+/* Reset e estrutura básica */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #121212; /* Fundo escuro como Spotify */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden; /* Evita scroll desnecessário */
 }
 
-#cover{
-    width: 58vh;
-}
-    
-#bellow__cover{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2em 0 2em 0;
-
-}
-#button__container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+.player-container {
+  background-color: #181818; /* Cor de fundo do player mais escura */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 380px; /* Largura máxima para o player */
+  box-sizing: border-box; /* Inclui padding na largura */
 }
 
-.button{
-    font-size: 1.5em;
+#playlist__title {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #1db954; /* Verde Spotify */
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
-.button__navigate{
-    font-size: 3em;
-}
-.button__biggest{
-    font-size: 4em;
-}
-#playlist__title{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 3.5em 0 5em 0;
-}
-#name__music{
-    font-size: 1.5em;
-    font-weight: bolder;
+img#cover {
+  width: 100%;
+  max-width: 280px; /* Tamanho da capa ajustado */
+  height: 280px; /* Para garantir que seja um quadrado */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.5rem;
+  object-fit: cover;
 }
 
-.light__color{
-    color: rgb(139, 153, 156)
+#info__music {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-#like__button{
-    font-size: 1.5em;
+#name__music {
+  font-size: 1.4rem; /* Nome da música maior */
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.3rem;
 }
-#progress__bar{
-    background-color:rgb(139, 153, 156) ;
-    height: 3px;
-    border-radius: 20px;
-    margin: 2em 0 2em 0;
-}
-#current__progress{
-    --progress: 
-    background-color: white;
-    height: inherit;
-    width: 50%;
-    border-radius: inherit;
 
+#band__music {
+  font-size: 0.95rem; /* Nome da banda ligeiramente menor */
+  color: #b3b3b3;
+}
+
+#bellow__cover {
+  display: flex;
+  justify-content: flex-end; /* Alinha o coração à direita */
+  width: 100%;
+  margin-top: 1rem; /* Espaço acima da barra de progresso */
+}
+
+#like__button {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  cursor: pointer;
+  font-size: 1.6rem; /* Ícone de like maior */
+  transition: color 0.2s ease-in-out;
+}
+
+#progress__container {
+  width: 100%;
+  max-width: 300px; /* Largura da barra de progresso */
+  height: 4px; /* Barra mais fina */
+  background-color: #404040;
+  border-radius: 2px;
+  margin: 1rem 0; /* Ajuste de margem */
+  cursor: pointer;
+  position: relative; /* Para posicionar o tempo */
+}
+
+#progress__bar {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#current__progress {
+  --progress: 0%;
+  width: var(--progress);
+  height: 100%;
+  background-color: #1db954;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.time-display {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+  font-size: 0.75rem;
+  color: #b3b3b3;
+  margin-top: 0.3rem;
+}
+
+#button__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 300px; /* Largura dos botões */
+  gap: 0.5rem; /* Espaçamento menor entre os botões */
+}
+
+.button {
+  background: none;
+  border: none;
+  color: #b3b3b3; /* Cor padrão dos ícones */
+  font-size: 1.8rem; /* Tamanho padrão dos ícones */
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  padding: 0.5rem; /* Adiciona padding para área de clique */
+}
+
+.button:hover {
+  color: #fff; /* Ícones brancos ao passar o mouse */
+  transform: scale(1.05);
+}
+
+.button__navigate {
+  font-size: 2.2rem; /* Ícones de navegação maiores */
+}
+
+.button__biggest {
+  font-size: 3.5rem; /* Botão de play/pause bem grande */
+  color: #fff; /* Branco por padrão */
+}
+
+.button__biggest:hover {
+  color: #1db954; /* Verde ao passar o mouse no play/pause */
+}
+
+.button-active {
+  color: #1db954; /* Cor ativa para shuffle e repeat */
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .player-container {
+    border-radius: 0; /* Sem borda arredondada em telas muito pequenas */
+    padding: 1.5rem;
+    max-width: 100%;
+    min-height: 100vh; /* Ocupa a altura total em mobile */
+    justify-content: space-around; /* Distribui o conteúdo verticalmente */
+  }
+
+  img#cover {
+    max-width: 250px;
+    height: 250px;
+  }
+
+  #name__music {
+    font-size: 1.2rem;
+  }
+
+  #band__music {
+    font-size: 0.9rem;
+  }
+
+  #button__container {
+    flex-wrap: nowrap; /* Evita quebra de linha nos botões */
+    gap: 0.3rem;
+  }
+
+  .button {
+    font-size: 1.6rem;
+  }
+
+  .button__navigate {
+    font-size: 2rem;
+  }
+
+  .button__biggest {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 320px) {
+  img#cover {
+    max-width: 200px;
+    height: 200px;
+  }
+  .button {
+    font-size: 1.4rem;
+  }
+  .button__navigate {
+    font-size: 1.8rem;
+  }
+  .button__biggest {
+    font-size: 2.8rem;
+  }
 }
